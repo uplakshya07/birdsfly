@@ -165,7 +165,9 @@ header{
 }
 .link:hover{
     background-color: var(--yellow-2);
-    
+}
+.intro-section .link:hover{
+    background-color: black;
 }
 
 .link{
@@ -177,6 +179,10 @@ header{
     border-radius: 5px;
     gap: 10px;
 }
+.intro-section .link{
+    background-color: var(--text_color);
+}
+
 
 .intro-section .fs-1, .intro-section .h-1{
     margin-bottom: 20px;
