@@ -1,0 +1,119 @@
+:root{
+  --height: 480px;
+  --width: 100vw;
+}
+/* video slider */
+.slideshow{
+  overflow: hidden;
+}
+.slide-container {
+  width: var(--width);
+  height: var(--height);
+  position: relative;
+  /* z-index: 1; */
+  background-color: var(--white);
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: black; */
+}
+
+
+.slide-controls {
+  position: relative;
+  top: calc(-1*(var(--height)/2));
+  height: 0;
+  overflow: visible;
+  display: flex;
+  justify-content: space-around;
+  gap: 50%;
+  align-items: center;
+}
+
+#next-btn,
+#prev-btn {
+  cursor: pointer;
+  background: transparent;
+  font-size: 30px;
+  border: none;
+  padding: 10px;
+  color: white;
+  height: 4rem;
+  width: 4rem;
+  opacity: .8;
+  border: 2px transparent;
+  background: var(--dark);
+  border-radius: 50%;
+}
+
+#next-btn:focus,
+#prev-btn:focus {
+  outline: none;
+}
+
+.slide-content {
+  display: flex;
+  height: var(--height);
+  width: var(--width);
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid black;
+}
+.slide-content img{
+  width: 100%;
+  max-width: 500px;
+  height: 70%;
+  object-fit: cover;
+  object-position: 100% 0;
+}
+
+.slideshow .slide-title {
+  position: relative;
+  background-color: var(--yellow);
+  width: 90%;
+  max-width: 400px;
+  padding: 25px 20px;
+  top: -30px;
+  border-radius: 8px;
+}
+
+.slide-title .link{
+  margin: auto;
+  margin-top: 10px;
+}
+
+.slideshow h4 {
+  color: var(--dark);
+  line-height: 1.5rem;
+  font-family: "Oswald", sans-serif;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .slide-content{
+    flex-direction: row;
+    justify-content: center;
+  }
+  .slide-title{
+    left: 35px;
+    max-width: 250px !important;
+    height: 250px;
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+  }
+  .slide-content img{
+    height: 100%;
+  }
+}
